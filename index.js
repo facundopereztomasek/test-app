@@ -27,7 +27,7 @@ var server = restify.createServer();
 
 server.use(restify.queryParser());
 
-server.listen(process.env.DB_PORT || 8080, function() {
+server.listen(process.env.PORT || 8080, function() {
   console.log('Iniciado');
   console.log('%s listening at %s', server.name, server.url);
 });
