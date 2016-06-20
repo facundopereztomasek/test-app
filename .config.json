@@ -1,0 +1,28 @@
+{
+  "production": {
+    "database": {
+      "url": "ec2-54-225-195-254.compute-1.amazonaws.com",
+      "port": "5432",
+      "username": "csvgsbjixximdp",
+      "password": "HUL9pI2oE2C6i5nR3QUko07CTZ",
+      "database": "da1r1gs5po0rs7",
+      "dialect": "postgres",
+      "dialectOptions": {
+        "ssl": true
+      }
+    }
+  },
+  "development": {
+    "database": {
+      "url": "localhost",
+      "port": "3306",
+      "username": "root",
+      "password": "",
+      "database": "test-app",
+      "dialect": "mysql",
+      "dialectOptions": {
+        "ssl": false
+      }
+    }
+  }
+}

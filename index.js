@@ -1,13 +1,16 @@
 //DATABASE_URL  heroku-postgresql:hobby-dev
 // index.js
+var config = require('./.config.json')[process.env.ENV || 'development'];
+console.log(config);
 var Sequelize = require('sequelize');
 var sequelize = new Sequelize(
-  process.env.DB_NAME || 'da1r1gs5po0rs7',
-  process.env.DB_USERNAME || 'csvgsbjixximdp',
-  process.env.DB_PASSWORD || 'HUL9pI2oE2C6i5nR3QUko07CTZ', {
-    host: process.env.DB_URL || 'ec2-54-225-195-254.compute-1.amazonaws.com',
-    port: process.env.DB_PORT || '5432',
-
+  config.database.database,
+  config.database.username,
+  config.database.password, {
+    host: config.database.url,
+    port: config.database.port,
+    dialect: config.database.dialect,
+    dialectOptions: config.database.dialectOptions
   }
 );
 
